@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grade 9 Mathematics - Redemption</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    body {
+      padding: 2rem;
+      line-height: 1.8;
+      font-family: 'Inter', sans-serif;
+      background-color: #f8f9fa;
+    }
+    h1, h2, h3 {
+      color: #222;
+    }
+    .subtopic {
+      margin-bottom: 3rem;
+    }
+    .example, .practice {
+      margin-left: 1rem;
+    }
+    .example li, .practice li {
+      margin-bottom: 0.5rem;
+    }
+
+    .get-more-btn {
+      display: block;
+      margin-top: 3rem;
+      padding: 1rem 2rem;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      cursor: pointer;
+      text-align: center;
+      width: 100%;
+      transition: background-color 0.3s ease;
+    }
+
+    .get-more-btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <h1>Grade 9 Mathematics</h1>
+
+  <div class="subtopic">
+    <h2>1. Combined Operations on Integers</h2>
+    <p>Combined operations involve the use of addition, subtraction, multiplication, and division in a single expression involving integers. To solve such expressions, use the BODMAS rule: Brackets, Orders (powers/roots), Division and Multiplication (from left to right), Addition and Subtraction (from left to right).</p>
+    
+    <h3>Examples</h3>
+    <ul class="example">
+      <li>1. Simplify: -4 + 7 - 3 × 2 → -4 + 7 - 6 = -3</li>
+      <li>2. Simplify: (-3) × (4 - 6) ÷ 2 → (-3) × (-2) ÷ 2 = 6 ÷ 2 = 3</li>
+      <li>3. A football team gained 3 points in a win, lost 2 points in a loss, and had 5 wins and 2 losses. What is their total? → 5×3 - 2×2 = 15 - 4 = 11</li>
+      <li>4. James earns KSh 50 for every correct answer and loses KSh 20 for each incorrect one. If he answers 8 correctly and 3 incorrectly, what is his score? → 50×8 - 20×3 = 400 - 60 = KSh 340</li>
+      <li>5. Simplify: -12 ÷ 3 + 2 × (-4) = -4 + (-8) = -12</li>
+    </ul>
+
+    <h3>Practice Questions</h3>
+    <ul class="practice">
+      <li>1. Simplify: 5 - 3 × 2 + 4</li>
+      <li>2. Evaluate: (-2) × 3 + (-4) ÷ 2</li>
+      <li>3. Simplify: -8 + 6 × 2 - 3</li>
+      <li>4. A farmer loses 4 goats per month for 3 months, and gains 2 per month for the next 2 months. What's the net change?</li>
+      <li>5. A game gives +10 for a win, -5 for a loss. Peter played 6 games, won 4, lost 2. What's his score?</li>
+      <li>6. Evaluate: (5 - 9) × (-2)</li>
+      <li>7. Simplify: 3 × (-3) + 12 ÷ (-4)</li>
+      <li>8. Simplify: -5 + 2 × 6 - 4</li>
+      <li>9. If you spend KSh 30 on Monday, KSh 50 on Tuesday, and earn KSh 100 on Wednesday, what is your balance?</li>
+      <li>10. Jane solves 10 problems, gaining 4 points each. She makes 3 mistakes losing 2 points each. Total score?</li>
+    </ul>
+  </div>
+
+  <div class="subtopic">
+    <h2>2. Indices and Logarithms</h2>
+    <p><strong>Indices</strong> are powers or exponents used to express repeated multiplication. For example, 2<sup>3</sup> = 2 × 2 × 2 = 8. <br><strong>Logarithms</strong> are the inverse of indices. If 2<sup>3</sup> = 8, then log<sub>2</sub>(8) = 3.</p>
+    <p><strong>Laws of indices:</strong></p>
+    <ul>
+      <li>a<sup>m</sup> × a<sup>n</sup> = a<sup>m+n</sup></li>
+      <li>a<sup>m</sup> ÷ a<sup>n</sup> = a<sup>m-n</sup></li>
+      <li>(a<sup>m</sup>)<sup>n</sup> = a<sup>mn</sup></li>
+      <li>a<sup>0</sup> = 1 (if a ≠ 0)</li>
+    </ul>
+
+    <h3>Examples</h3>
+    <ul class="example">
+      <li>1. Simplify: 2<sup>3</sup> × 2<sup>2</sup> = 2<sup>5</sup> = 32</li>
+      <li>2. Simplify: (5<sup>2</sup>)<sup>3</sup> = 5<sup>6</sup> = 15625</li>
+      <li>3. A factory doubles its output each week. If it produces 100 units in week 1, how many units in week 4? → 100 × 2<sup>3</sup> = 800</li>
+      <li>4. Peter invests KSh 1000 in a bank that doubles his money each year. How much after 3 years? → 1000 × 2<sup>3</sup> = KSh 8000</li>
+      <li>5. Express 81 as a power of 3 → 81 = 3<sup>4</sup></li>
+    </ul>
+
+    <h3>Practice Questions</h3>
+    <ul class="practice">
+      <li>1. Simplify: 3<sup>2</sup> × 3<sup>4</sup></li>
+      <li>2. Simplify: (2<sup>3</sup>)<sup>2</sup></li>
+      <li>3. Evaluate: 10<sup>0</sup> + 5<sup>1</sup></li>
+      <li>4. If a virus doubles every day and there are 2 cases today, how many in 5 days?</li>
+      <li>5. A car’s value triples each year. If it's KSh 10,000 now, value after 2 years?</li>
+      <li>6. Write 64 as a power of 4</li>
+      <li>7. Simplify: 7<sup>5</sup> ÷ 7<sup>2</sup></li>
+      <li>8. Evaluate: log<sub>10</sub>(1000)</li>
+      <li>9. If log<sub>10</sub>(x) = 2, find x</li>
+      <li>10. Express 1/125 as a power of 5</li>
+    </ul>
+  </div>
+
+  <!-- Button to redirect to premium page -->
+  <button class="get-more-btn" onclick="window.location.href='{{ url_for('premium') }}'">
+    Get more notes and questions
+  </button>
+  
+</body>
+</html>

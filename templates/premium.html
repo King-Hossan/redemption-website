@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Redemption Premium</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <style>
+    .comparison-table {
+      width: 90%;
+      max-width: 800px;
+      margin: 2rem auto;
+      border-collapse: collapse;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .comparison-table th {
+      background-color: #f8f8f8;
+      font-weight: 700;
+    }
+
+    .premium-highlight {
+      background-color: #e0f7fa;
+      font-weight: bold;
+    }
+
+    .pay-now-btn {
+      display: block;
+      margin: 2rem auto;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .pay-now-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav-left">
+      <a href="{{ url_for('home') }}">Home</a>
+    </div>
+  </header>
+
+  <h1 class="page-title">Compare Plans: Basic vs Premium</h1>
+
+  <table class="comparison-table">
+    <thead>
+      <tr>
+        <th>Features</th>
+        <th>Basic</th>
+        <th class="premium-highlight">Premium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Access to Math, Science, English, and Social Studies</td>
+        <td>✔️</td>
+        <td class="premium-highlight">✔️</td>
+      </tr>
+      <tr>
+        <td>Topic-Based Practice Questions</td>
+        <td>✔️</td>
+        <td class="premium-highlight">✔️ + Extra Questions</td>
+      </tr>
+      <tr>
+        <td>Worked Examples (Step-by-Step)</td>
+        <td>Some</td>
+        <td class="premium-highlight">All with Explanations</td>
+      </tr>
+      <tr>
+        <td>Exam Generator from Notes</td>
+        <td>❌</td>
+        <td class="premium-highlight">✔️</td>
+      </tr>
+      <tr>
+        <td>Offline Access (PDFs)</td>
+        <td>❌</td>
+        <td class="premium-highlight">✔️</td>
+      </tr>
+      <tr>
+        <td>Ad-Free Experience</td>
+        <td>❌</td>
+        <td class="premium-highlight">✔️</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <form action="#" method="post">
+    <button class="pay-now-btn">Pay Now</button>
+  </form>
+
+</body>
+</html>
