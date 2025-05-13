@@ -81,7 +81,9 @@ def login():
 def premium():
     return render_template('premium.html')
 
-# === Run Server ===
+# === Initialize DB always, even on deployment ===
+init_db()
+
+# === Run Server Locally ===
 if __name__ == '__main__':
-    init_db()
-    app.run(debug=True)
+    app.run()
