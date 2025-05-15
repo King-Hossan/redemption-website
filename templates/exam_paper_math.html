@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redemption - Sample Exam</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f0f4f8;
+      font-family: 'Inter', sans-serif;
+      padding: 2rem;
+      color: #222;
+    }
+    h1, h2 {
+      text-align: center;
+      color: #007BFF;
+    }
+    .question {
+      margin-bottom: 1.5rem;
+      padding: 1rem;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .question-number {
+      font-weight: bold;
+    }
+    .marks {
+      float: right;
+      font-weight: bold;
+      color: #555;
+    }
+    .clearfix {
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+  <h1>Redemption Revision</h1>
+  <h2>Comprehensive Mathematics Exam</h2>
+  <p style="text-align: center;">Time: 2 hours | Total Marks: 100</p>
+
+  {% for q in questions %}
+  <div class="question">
+    <div class="question-number">{{ loop.index }}. {{ q.text }} <span class="marks">({{ q.marks }} marks)</span></div>
+    {% if q.subparts %}
+      <ol type="a">
+        {% for part in q.subparts %}
+          <li>{{ part }}</li>
+        {% endfor %}
+      </ol>
+    {% endif %}
+    <div class="clearfix"></div>
+  </div>
+  {% endfor %}
+
+</body>
+</html>

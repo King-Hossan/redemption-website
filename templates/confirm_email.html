@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Confirm Email - Redemption</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <main class="form-container">
+    <h1>Enter the Confirmation Code</h1>
+    <form method="POST">
+      <label for="code">Code sent to {{ email }}:</label>
+      <input type="text" id="code" name="code" required>
+      <button type="submit">Confirm</button>
+    </form>
+  </main>
+</body>
+</html>

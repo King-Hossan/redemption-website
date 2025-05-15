@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Redemption - Subjects</title>
+  <title>Choose Exam - Redemption</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
       background-color: #f0f4f8;
       font-family: 'Inter', sans-serif;
+      margin: 0;
     }
 
     header {
@@ -34,72 +34,72 @@
       align-items: center;
     }
 
-    .subjects-container {
-      text-align: center;
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       padding: 2rem;
     }
 
-    .subjects-container h1 {
+    h1 {
       font-size: 2rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       color: #222;
     }
 
-    .subjects-container form {
-      margin: 1rem 0;
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
     }
 
-    .subjects-container button {
-      padding: 0.75rem 1.5rem;
-      background-color: #007BFF;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-weight: bold;
+    select {
+      padding: 0.75rem 1.25rem;
       font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      width: 100%;
+    }
+
+    button {
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      font-weight: bold;
+      color: white;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      width: 100%;
     }
 
-    .subjects-container button:hover {
-      background-color: #0056b3;
-    }
-
-    .button.small {
-      font-size: 0.9rem;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-
-    /* Rainbow Animation */
-    .rainbow-button, .button.rainbow {
+    /* Rainbow animated gradient button */
+    .rainbow-button {
       background: linear-gradient(270deg, red, orange, yellow, green, cyan, blue, violet);
       background-size: 1400% 1400%;
-      animation: rainbow 8s ease infinite;
-      color: white !important;
-      font-weight: bold;
-      border: none;
+      animation: rainbow 10s ease infinite;
     }
 
     @keyframes rainbow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
     }
 
-    .rainbow-button:hover,
-    .button.rainbow:hover {
-      box-shadow: 0 0 12px rgba(0,0,0,0.3);
-      transform: scale(1.03);
+    .rainbow-button:hover {
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      transform: scale(1.02);
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="nav-left">
       <a href="{{ url_for('home') }}">Home</a>
-      <a href="{{ url_for('premium') }}" class="button small rainbow">Get Premium</a>
+      <a href="{{ url_for('premium') }}" class="button small">Get Premium</a>
       <a href="{{ url_for('login') }}">Log In</a>
     </div>
     <div class="nav-right">
@@ -110,28 +110,25 @@
   </header>
 
   <main>
-    <div class="subjects-container">
-      <h1>Select a Subject to Start Revising</h1>
+    <h1>Choose an Exam to Begin</h1>
 
-      <!-- Subject Buttons -->
-      <form action="{{ url_for('math') }}" method="get">
-        <button type="submit">Math</button>
-      </form>
-      <form action="#" method="get">
-        <button type="submit">Science</button>
-      </form>
-      <form action="#" method="get">
-        <button type="submit">English</button>
-      </form>
-      <form action="#" method="get">
-        <button type="submit">Social Studies</button>
-      </form>
+    <form action="{{ url_for('exam_paper') }}" method="get">
+      <label for="grade">Select Grade:</label>
+      <select name="grade" id="grade" required>
+        <option value="grade6">Grade 6</option>
+        <option value="grade7">Grade 7</option>
+        <option value="grade8">Grade 8</option>
+      </select>
 
-      <!-- Rainbow Exams Button -->
-      <form action="{{ url_for('choose_exam') }}" method="get" style="margin-top: 2rem;">
-        <button type="submit" class="rainbow-button">Exams</button>
-      </form>
-    </div>
+      <label for="exam">Select Exam:</label>
+      <select name="exam" id="exam" required>
+        <option value="paper1">Mathematics Paper 1</option>
+        <option value="paper2">Mathematics Paper 2</option>
+        <option value="mock">Mock Exam</option>
+      </select>
+
+      <button type="submit" class="rainbow-button">Start Exam</button>
+    </form>
   </main>
 
   <script>
@@ -147,5 +144,6 @@
       }
     });
   </script>
+
 </body>
 </html>
